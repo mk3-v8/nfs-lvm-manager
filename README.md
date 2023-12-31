@@ -21,11 +21,14 @@ These scripts automate the creation and removal of Logical Volumes (LVs) for a s
     cd nfs-lvm-manager
     ```
 
-3. Make the scripts executable:
+3. Make the scripts executable and cp[u it to bin:
 
     ```bash
     chmod +x create.sh
     chmod +x remove.sh
+    sudo cp create.sh /bin/create-lv
+    sudo cp remove.sh /bin/remove-lv
+    export PATH=$PATH:/bin
     ```
 
 ## Usage
@@ -35,12 +38,12 @@ These scripts automate the creation and removal of Logical Volumes (LVs) for a s
 #### Syntax:
 
 ```bash
-./create.sh <lv_name> <lv_size>
+create-lv <lv_name> <lv_size>
 ```
 
 ### 2. Remove Logical Volume (remove.sh)
 ```bash
-./remove_lv.sh <lv_name>
+remove-lv <lv_name>
 ```
 # Notes
 - These scripts must be run as root (sudo or as a superuser).
