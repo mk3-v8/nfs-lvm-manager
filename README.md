@@ -39,7 +39,7 @@ These scripts automate the creation and removal of Logical Volumes (LVs) for a s
 ```
 
 ### 2. Remove Logical Volume (remove.sh)
-```
+```bash
 ./remove_lv.sh <lv_name>
 ```
 # Notes
