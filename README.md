@@ -44,7 +44,7 @@ These scripts automate the creation and removal of Logical Volumes (LVs) for a s
 ```
 # Notes
 - These scripts must be run as root (sudo or as a superuser).
-- The create_lv.sh script will create an XFS file system, update the /etc/fstab file, and restart the NFS server.
-- The remove_lv.sh script will unmount, remove the LV, update configuration files, and restart the NFS server.
+- The create.sh script will create an XFS file system, update the /etc/fstab file, and restart the NFS server.
+- The remove.sh script will unmount, remove the LV, update configuration files, and restart the NFS server.
 
 ### Feel free to contribute, report issues, or suggest improvements!
