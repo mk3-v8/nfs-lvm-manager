@@ -1,4 +1,4 @@
-# NFS Volume Management Scripts
+# Kubernetes NFS Volume Management Scripts
 
 These scripts automate the creation and removal of Logical Volumes (LVs) for a specified Volume Group (VG) on an NFS server. The scripts are designed for use with the XFS file system.
 
