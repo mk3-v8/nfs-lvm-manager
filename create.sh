@@ -1,5 +1,6 @@
 #!/bin/bash
 VG_NAME="nfs"
+ACL="192.168.100.0/24"
 LV_NAME=$1
 LV_SIZE=$2
 MOUNT_DIR="/mnt/$LV_NAME"
@@ -31,6 +32,6 @@ mkfs.xfs -f /dev/$VG_NAME/$LV_NAME
 echo "/dev/$VG_NAME/$LV_NAME         $MOUNT_DIR             xfs     defaults        0 0" >> /etc/fstab
 mount -a
 systemctl daemon-reload
-echo "$MOUNT_DIR/            *(rw,sync,no_root_squash)" >> /etc/exports
+echo "$MOUNT_DIR/            $ACL(rw,sync,no_root_squash)" >> /etc/exports
 systemctl restart nfs-server.service
 echo "Setup completed for LV: $LV_NAME with size: $LV_SIZE"
