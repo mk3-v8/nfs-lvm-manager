@@ -33,5 +33,5 @@ echo "/dev/$VG_NAME/$LV_NAME         $MOUNT_DIR             xfs     defaults    
 mount -a
 systemctl daemon-reload
 echo "$MOUNT_DIR/            $ACL(rw,sync,no_root_squash)" >> /etc/exports
-systemctl restart nfs-server.service
+exportfs -a
 echo "Setup completed for LV: $LV_NAME with size: $LV_SIZE"
