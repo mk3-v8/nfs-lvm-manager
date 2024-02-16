@@ -24,6 +24,6 @@ sed -i "\\@/dev/$VG_NAME/$LV_NAME@d" /etc/fstab
 lvremove -f "/dev/$VG_NAME/$LV_NAME"
 systemctl daemon-reload
 sed -i "/\/$LV_NAME\//d" /etc/exports
-systemctl restart nfs-server.service
+exportfs -a
 echo "Cleanup completed for LV: $LV_NAME"
 
